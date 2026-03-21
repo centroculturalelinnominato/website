@@ -1120,3 +1120,276 @@ h4 { font-size: 1.2rem; }
   background: var(--teal);
   color: var(--white);
 }
+
+/* ============================================
+   MODAL FORM ISCRIZIONE SOCIO
+   ============================================ */
+.socio-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+
+.socio-modal.active {
+  display: flex;
+}
+
+.socio-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+}
+
+.socio-modal-container {
+  position: relative;
+  background: var(--white);
+  border-radius: 20px;
+  max-width: 720px;
+  width: 92%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2.5rem;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.socio-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--grey);
+  cursor: pointer;
+  line-height: 1;
+  z-index: 1;
+  transition: color 0.2s;
+}
+
+.socio-modal-close:hover {
+  color: var(--black);
+}
+
+.socio-modal-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--light-grey);
+}
+
+.socio-modal-header h2 {
+  font-family: var(--font-heading);
+  color: var(--purple-dark);
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.socio-modal-header p {
+  color: var(--grey);
+  font-size: 0.95rem;
+}
+
+/* Form layout */
+.socio-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.socio-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.socio-form .form-group-full {
+  grid-column: 1 / -1;
+}
+
+.socio-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.35rem;
+}
+
+.socio-form label .req {
+  color: #e74c3c;
+}
+
+.socio-form input[type="text"],
+.socio-form input[type="email"],
+.socio-form input[type="tel"],
+.socio-form input[type="date"],
+.socio-form select {
+  padding: 0.7rem 0.9rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fafafa;
+}
+
+.socio-form input:focus,
+.socio-form select:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(26,191,176,0.15);
+  background: var(--white);
+}
+
+.socio-form input.error,
+.socio-form select.error {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231,76,60,0.1);
+}
+
+.socio-form input[type="checkbox"].error {
+  outline: 2px solid #e74c3c;
+  outline-offset: 2px;
+}
+
+/* Declarations section */
+.form-declarations {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid var(--purple);
+}
+
+.form-declarations h3 {
+  font-family: var(--font-heading);
+  color: var(--purple-dark);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--dark);
+}
+
+.form-check input[type="checkbox"] {
+  margin-top: 0.25rem;
+  min-width: 18px;
+  min-height: 18px;
+  accent-color: var(--teal);
+  cursor: pointer;
+}
+
+/* Payment section */
+.form-payment {
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.5rem;
+  background: linear-gradient(135deg, #e8f8f5 0%, #ebf5fb 100%);
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+.form-payment a {
+  color: var(--teal-dark);
+  text-decoration: underline;
+}
+
+/* Actions */
+.form-actions {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.socio-submit-btn {
+  padding: 0.9rem 3rem !important;
+  font-size: 1rem !important;
+  min-width: 280px;
+}
+
+/* Messages */
+.form-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.form-message.error {
+  background: #fef2f2;
+  color: #c0392b;
+  border: 1px solid #f5c6cb;
+}
+
+.form-message.success {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+/* Success state */
+.socio-success {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.success-icon {
+  font-size: 4rem;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+.socio-success h2 {
+  font-family: var(--font-heading);
+  color: var(--purple-dark);
+  margin-bottom: 0.5rem;
+}
+
+.socio-success p {
+  color: var(--grey);
+  line-height: 1.7;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .socio-modal-container {
+    width: 96%;
+    padding: 1.5rem;
+    max-height: 95vh;
+    border-radius: 16px;
+  }
+
+  .socio-form .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .socio-modal-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .socio-submit-btn {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .form-declarations {
+    padding: 1rem;
+  }
+}
