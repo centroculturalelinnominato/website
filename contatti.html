@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti - Centro Culturale L'Innominato</title>
+  <meta name="description" content="Contatti del Centro Culturale L'Innominato - San Donato Milanese. Scrivici per informazioni e incontri.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/website/css/style.css">
+  <link rel="icon" href="/website/images/logo.png" type="image/png">
+  <style>
+    /* Contact grid 2 columns for contact page */
+    .contact-page-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .contact-form-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .contact-info-column {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .contact-info-block {
+      background: var(--light-grey);
+      padding: 2rem;
+      border-radius: 16px;
+      transition: var(--transition);
+    }
+
+    .contact-info-block:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transform: translateY(-3px);
+    }
+
+    .contact-info-block h4 {
+      color: var(--purple-dark);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-info-block p {
+      color: var(--grey);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .maps-container {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      height: 300px;
+    }
+
+    .maps-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .contact-page-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-page-grid {
+        gap: 2rem;
+      }
+
+      .contact-info-block {
+        padding: 1.5rem;
+      }
+
+      .maps-container {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/website/index.html" class="logo">
+        <img src="/website/images/logo.png" alt="Centro Culturale L'Innominato">
+        <div class="logo-text">
+          L'Innominato
+          <span>Centro Culturale</span>
+        </div>
+      </a>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/website/index.html">Home</a>
+        <a href="/website/chi-siamo.html">Chi Siamo</a>
+        <a href="/website/incontri.html">Incontri</a>
+        <a href="/website/contatti.html" class="active">Contatti</a>
+        <a href="/website/diventa-socio.html" class="nav-cta">Diventa Socio</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero" style="background-image: url("/website/images/hero-1.jpg")">
+    <div class="hero-content">
+      <h1>Contatti</h1>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,70 L1440,120 L0,120 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-page-grid">
+        <!-- LEFT COLUMN: Contact Form -->
+        <div class="contact-form-column">
+          <h2 style="color: var(--purple-dark); margin-bottom: 2rem; font-size: 1.8rem;">Scrivici</h2>
+          <form class="contact-form" action="#" method="post">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="messaggio">Messaggio</label>
+              <textarea id="messaggio" name="messaggio" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-teal" style="width: 100%; justify-content: center;">Invia Messaggio</button>
+          </form>
+        </div>
+
+        <!-- RIGHT COLUMN: Contact Information -->
+        <div class="contact-info-column">
+          <!-- Location Info -->
+          <div class="contact-info-block">
+            <h4><i class="fas fa-map-marker-alt" style="color: var(--teal); margin-right: 0.5rem;"></i>Dove trovarci</h4>
+            <p><strong>San Donato Milanese (MI)</strong></p>
+          </div>
+
+          <!-- Meeting Places -->
+          <div class="contact-info-block">
+            <h4><i class="fas fa-building" style="color: var(--teal); margin-right: 0.5rem;"></i>Sedi degli Incontri</h4>
+            <p><strong>Sala Consiliare del Comune</strong><br>Via Cesare Battisti 2<br>San Donato Milanese</p>
+            <p style="margin-top: 1rem;"><strong>Teatro Scuola Maria Ausiliatrice</strong><br>Via Sergnano 10<br>San Donato Milanese</p>
+          </div>
+
+          <!-- Social Links -->
+          <div class="contact-info-block">
+            <h4><i class="fas fa-share-alt" style="color: var(--teal); margin-right: 0.5rem;"></i>Seguici sui Social</h4>
+            <p style="margin-bottom: 1rem;">Rimani aggiornato sugli ultimi incontri e iniziative</p>
+            <div class="social-links">
+              <a href="https://tinyurl.com/CCLI-SDM" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://tinyurl.com/CCLI-SDM-inst" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/@CentroCulturaleLInnominato" target="_blank" rel="noopener" title="YouTube" class="youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Maps -->
+          <div class="maps-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2820.7485944559677!2d9.264854!3d45.409386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786d9f5c5c5c5cd%3A0x1e5f5c5c5c5c5c5c!2sVia%20Cesare%20Battisti%202%2C%2020097%20San%20Donato%20Milanese%20MI!5e0!3m2!1sit!2sit!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/website/index.html" class="logo">
+            <img src="/website/images/logo.png" alt="L'Innominato" style="filter: brightness(0) invert(1); height: 60px;">
+          </a>
+          <div class="logo-text" style="margin-top: 1rem;">
+            L'Innominato
+            <span>Centro Culturale</span>
+          </div>
+        </div>
+        <div class="footer-info">
+          <p><strong style="color: white;">Centro Culturale "L'Innominato"</strong></p>
+          <p>San Donato Milanese (MI)</p>
+          <p style="margin-top: 0.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.5);">
+            Sede incontri: Sala Consiliare del Comune, Via C. Battisti 2
+          </p>
+          <div class="footer-social" style="margin-top: 1.5rem;">
+            <a href="https://tinyurl.com/CCLI-SDM" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://tinyurl.com/CCLI-SDM-inst" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@CentroCulturaleLInnominato" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-cta">
+          <p>Iscriviti al nostro canale YouTube</p>
+          <a href="https://www.youtube.com/@CentroCulturaleLInnominato" target="_blank" rel="noopener" class="btn btn-yellow" style="font-size: 0.75rem;">Iscriviti</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 &ndash; 2026 | Centro Culturale "L'Innominato" | San Donato Milanese</p>
+        <p style="margin-top: 0.5rem;"><a href="#">Privacy Policy</a> &bull; <a href="#">Cookie Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Torna su">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="/website/js/main.js"></script>
+</body>
+</html>

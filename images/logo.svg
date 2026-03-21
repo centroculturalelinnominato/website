@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" width="120" height="160">
+  <!-- Silhouette of the Innominato character - man with hat and cloak -->
+  <defs>
+    <style>
+      .figure { fill: #1a1a1a; }
+    </style>
+  </defs>
+  <!-- Hat -->
+  <ellipse class="figure" cx="60" cy="18" rx="28" ry="6"/>
+  <ellipse class="figure" cx="60" cy="14" rx="16" ry="12"/>
+  <!-- Head -->
+  <circle class="figure" cx="60" cy="35" r="12"/>
+  <!-- Cloak/Body -->
+  <path class="figure" d="M60,47 C60,47 30,55 25,90 C22,110 28,145 35,155 L85,155 C92,145 98,110 95,90 C90,55 60,47 60,47 Z"/>
+  <!-- Inner cloak detail -->
+  <path fill="#333" d="M60,50 C60,50 45,58 42,80 C40,95 42,120 45,140 L75,140 C78,120 80,95 78,80 C75,58 60,50 60,50 Z" opacity="0.3"/>
+</svg>
