@@ -129,7 +129,7 @@
           <!-- Pagamento -->
           <div class="form-payment">
             <p><strong>Versamento quota associativa 10&euro; &mdash; Anno 2026</strong></p>
-            <p>Puoi versare la quota tramite <a href="https://tag.satispay.com/centroculturalelinnominato" target="_blank" rel="noopener"><strong>SatisPay</strong></a> oppure con <a href="https://paypal.me/CCLInnominato/10" target="_blank" rel="noopener"><strong>altri pagamenti digitali</strong></a>.</p>
+            <p>Puoi versare la quota tramite <a href="https://web.satispay.com/app/pay/shops/fc46e14b-a9ae-41ab-bb80-b6a7de076be8?amount=1000" target="_blank" rel="noopener"><strong>SatisPay</strong></a> oppure con <a href="https://buy.stripe.com/00wcN4cdJdNw2c41JC6c000" target="_blank" rel="noopener"><strong>altri pagamenti digitali</strong></a>.</p>
           </div>
 
           <!-- Submit -->
@@ -153,8 +153,8 @@
           <p>Grazie per la tua richiesta di adesione al Centro Culturale L'Innominato. Riceverai una conferma via email.</p>
           <p style="margin-top:1.5rem;"><strong>Ricordati di versare la quota associativa di 10&euro;</strong></p>
           <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;">
-            <a href="https://tag.satispay.com/centroculturalelinnominato" target="_blank" rel="noopener" class="btn btn-teal" style="font-size:0.85rem;">Paga con SatisPay</a>
-            <a href="https://paypal.me/CCLInnominato/10" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.85rem;">Altri metodi</a>
+            <a href="https://web.satispay.com/app/pay/shops/fc46e14b-a9ae-41ab-bb80-b6a7de076be8?amount=1000" target="_blank" rel="noopener" class="btn btn-teal" style="font-size:0.85rem;">Paga con SatisPay</a>
+            <a href="https://buy.stripe.com/00wcN4cdJdNw2c41JC6c000" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.85rem;">Altri metodi</a>
           </div>
           <button class="btn btn-secondary socio-close-success" style="margin-top:2rem;">Chiudi</button>
         </div>
