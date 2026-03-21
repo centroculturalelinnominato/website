@@ -8,10 +8,10 @@
   'use strict';
 
   // --- EmailJS Config (da aggiornare con i propri valori) ---
-  const EMAILJS_PUBLIC_KEY = '__PUBLIC_KEY__';
-  const EMAILJS_SERVICE_ID = '__SERVICE_ID__';
-  const EMAILJS_TEMPLATE_CONTATTI = '__TEMPLATE_CONTATTI__';
-  const EMAILJS_TEMPLATE_NEWSLETTER = '__TEMPLATE_NEWSLETTER__';
+  const EMAILJS_PUBLIC_KEY = 'PDVWxSfu_DwByyKxN';
+  const EMAILJS_SERVICE_ID = 'service_wx49mur';
+  const EMAILJS_TEMPLATE_CONTATTI = 'template_5lpqc8q';
+  const EMAILJS_TEMPLATE_NEWSLETTER = 'template_w2bygtu';
 
   // Init EmailJS
   function initEmailJS() {
@@ -47,6 +47,7 @@
           if (!window.emailjs) throw new Error('Servizio email non disponibile.');
 
           await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CONTATTI, {
+            name: nome,
             from_name: nome,
             from_email: email,
             message: messaggio
