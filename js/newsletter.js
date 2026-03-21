@@ -54,7 +54,9 @@
               throw error;
             }
           } else {
-            showFeedback(form, 'Iscrizione avvenuta con successo!', 'success');
+            showFeedback(form, 'Iscrizione avvenuta con successo! Controlla la tua email.', 'success');
+            // Dispatch event for EmailJS confirmation email
+            document.dispatchEvent(new CustomEvent('newsletter:subscribed', { detail: { email: email } }));
             input.value = '';
           }
         } catch (err) {
