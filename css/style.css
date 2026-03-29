@@ -400,10 +400,11 @@ h4 { font-size: 1.2rem; }
 }
 
 .partner-logo-img {
-  width: 100%;
+  width: 50%;
   height: auto;
-  margin-top: 0.4rem;
   display: block;
+  margin: 0 auto;
+  clip-path: inset(2px);
 }
 
 .event-badge {
