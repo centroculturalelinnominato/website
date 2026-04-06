@@ -334,6 +334,15 @@ h4 { font-size: 1.2rem; }
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .upcoming-event-section {
+    padding: 3rem 0;
+  }
+  .upcoming-event-section .container {
+    padding: 0 1rem;
+  }
+}
+
 .upcoming-event-section::before {
   content: '';
   position: absolute;
@@ -551,6 +560,7 @@ h4 { font-size: 1.2rem; }
 @media (max-width: 768px) {
   .upcoming-event-card {
     grid-template-columns: 1fr;
+    max-width: 100%;
   }
 
   .upcoming-event-sidebar {
@@ -559,19 +569,37 @@ h4 { font-size: 1.2rem; }
   }
 
   .upcoming-event-details {
-    padding: 1.5rem;
+    padding: 1.2rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .upcoming-event-details h3 {
+    font-size: 1.3rem;
   }
 
   .event-info-grid {
     grid-template-columns: 1fr;
   }
 
+  .event-info-item span {
+    font-size: 0.82rem;
+  }
+
+  .event-free-notice {
+    font-size: 0.82rem;
+    padding: 0.7rem 1rem;
+  }
+
   .event-actions {
     flex-direction: column;
+    flex-wrap: wrap !important;
   }
 
   .event-actions .btn {
     text-align: center;
+    white-space: normal !important;
+    font-size: 0.8rem !important;
   }
 
   .event-partners {

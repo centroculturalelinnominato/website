@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (hamburger && nav) {
     hamburger.addEventListener('click', () => {
-      nav.classList.toggle('open');
+      const isOpen = nav.classList.toggle('open');
       hamburger.classList.toggle('active');
+      // Blocca scroll del body quando il menu è aperto
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // Close nav when clicking a link
@@ -19,8 +21,25 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         nav.classList.remove('open');
         hamburger.classList.remove('active');
+        document.body.style.overflow = '';
       });
     });
+  }
+
+  // --- Close mobile nav on scroll ---
+  if (hamburger && nav) {
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      if (nav.classList.contains('open')) {
+        const delta = Math.abs(window.scrollY - lastScrollY);
+        if (delta > 10) {
+          nav.classList.remove('open');
+          hamburger.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+      lastScrollY = window.scrollY;
+    }, { passive: true });
   }
 
   // --- Hero Slider ---
