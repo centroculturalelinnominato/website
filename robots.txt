@@ -1,3 +1,5 @@
+# robots.txt — Centro Culturale L'Innominato
+# Tutti i motori di ricerca sono ammessi su tutto il sito
 User-agent: *
 Allow: /
 
