@@ -2115,6 +2115,7 @@ h4 { font-size: 1.2rem; }
   gap: 1rem;
   padding-top: 1.2rem;
   border-top: 1px solid rgba(31,63,122,0.12);
+  justify-content: flex-end;
 }
 
 .apertura-patrocinio span {
@@ -2125,7 +2126,7 @@ h4 { font-size: 1.2rem; }
 }
 
 .apertura-patrocinio img {
-  width: 130px;
+  width: 170px;
   height: auto;
 }
 
